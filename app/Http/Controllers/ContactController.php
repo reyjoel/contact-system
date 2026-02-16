@@ -27,7 +27,7 @@ class ContactController extends Controller
             });
         }
 
-        $contacts = $query->latest()->paginate(5);
+        $contacts = $query->latest()->paginate(2);
 
         return view('contact.contact_list', compact('contacts'));
     }

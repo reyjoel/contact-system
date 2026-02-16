@@ -4,6 +4,7 @@
     <title>Contacts</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -57,7 +58,7 @@
 
     <!-- Table -->
     <div id="contact-list"></div>
-
+    
 </div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1">
@@ -75,6 +76,16 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            title: 'Success!',
+            text: "{{ session('success') }}",
+            icon: 'success',
+            confirmButtonText: 'continue'
+        });
+    </script>
+    @endif
 
 <script>
 function loadContacts(page = 1, search = '') {

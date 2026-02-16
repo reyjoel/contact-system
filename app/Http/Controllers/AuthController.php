@@ -70,6 +70,6 @@ class AuthController extends Controller
         // auto login after register
         Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Welcome, ' . $user->name . '! Thank you for registering.');
     }
 }

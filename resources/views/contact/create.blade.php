@@ -8,11 +8,16 @@
 
 <div class="container mt-4">
     <h3>Add Contact</h3>
+    @if($errors->any())
+        <div class="alert alert-danger">
+            {{ $errors->first() }}
+        </div>
+    @endif
 
     <form method="POST" action="/contacts">
         @csrf
 
-        <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
+        <input type="text" name="name" class="form-control mb-2" placeholder="Name">
         <input type="text" name="company" class="form-control mb-2" placeholder="Company">
         <input type="email" name="email" class="form-control mb-2" placeholder="Email">
         <input type="text" name="phone" class="form-control mb-2" placeholder="Phone">
