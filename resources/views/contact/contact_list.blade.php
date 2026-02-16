@@ -15,7 +15,7 @@
                 <td>{{ $contact->company }}</td>
                 <td>{{ $contact->phone }}</td>
                 <td>{{ $contact->email }}</td>
-                <td>
+                <td class="d-flex gap-2">
                     <a href="/contacts/{{ $contact->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
                     <button class="btn btn-danger btn-sm btn-delete" data-id="{{ $contact->id }}">Delete</button>
                 </td>
